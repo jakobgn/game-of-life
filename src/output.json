@@ -1,0 +1,435 @@
+{
+    "array_output": [
+      {
+        "expected_savings": 580000,
+        "min_saving": 580000,
+        "age": 40,
+        "max_saving": 580000,
+        "expenses": 19603960.3960396
+      },
+      {
+        "expected_savings": 692700,
+        "min_saving": 575540,
+        "age": 41,
+        "max_saving": 809860,
+        "expenses": 19470000
+      },
+      {
+        "expected_savings": 812406.5,
+        "min_saving": 630395.639032368,
+        "age": 42,
+        "max_saving": 994417.360967632,
+        "expenses": 19331400
+      },
+      {
+        "expected_savings": 939512.9375,
+        "min_saving": 697018.820805602,
+        "age": 43,
+        "max_saving": 1182007.0541944,
+        "expenses": 19188081
+      },
+      {
+        "expected_savings": 1074434.4698625,
+        "min_saving": 771881.914881259,
+        "age": 44,
+        "max_saving": 1376987.02484374,
+        "expenses": 19039962.48
+      },
+      {
+        "expected_savings": 1217609.16971294,
+        "min_saving": 854073.364938008,
+        "age": 45,
+        "max_saving": 1581144.97448787,
+        "expenses": 18886962.7815
+      },
+      {
+        "expected_savings": 1369499.28609523,
+        "min_saving": 943447.199392827,
+        "age": 46,
+        "max_saving": 1795551.37279763,
+        "expenses": 18728999.092782
+      },
+      {
+        "expected_savings": 1530592.57499903,
+        "min_saving": 1040176.19248659,
+        "age": 47,
+        "max_saving": 2021008.95751147,
+        "expenses": 18565987.4340115
+      },
+      {
+        "expected_savings": 1701403.70307422,
+        "min_saving": 1144597.72604309,
+        "age": 48,
+        "max_saving": 2258209.68010535,
+        "expenses": 18397842.6421563
+      },
+      {
+        "expected_savings": 1882475.72855805,
+        "min_saving": 1257149.54275197,
+        "age": 49,
+        "max_saving": 2507801.91436413,
+        "expenses": 18224478.3557206
+      },
+      {
+        "expected_savings": 2074381.66366164,
+        "min_saving": 1378339.76533217,
+        "age": 50,
+        "max_saving": 2770423.56199111,
+        "expenses": 18045806.999292
+      },
+      {
+        "expected_savings": 2277726.12289626,
+        "min_saving": 1508731.98925923,
+        "age": 51,
+        "max_saving": 3046720.25653328,
+        "expenses": 17861739.7678992
+      },
+      {
+        "expected_savings": 2493147.06206611,
+        "min_saving": 1648937.73672732,
+        "age": 52,
+        "max_saving": 3337356.38740489,
+        "expenses": 17672186.6111786
+      },
+      {
+        "expected_savings": 2721317.61291441,
+        "min_saving": 1799612.81264908,
+        "age": 53,
+        "max_saving": 3643022.41317974,
+        "expenses": 17477056.2173469
+      },
+      {
+        "expected_savings": 2962948.01868371,
+        "min_saving": 1961455.87659137,
+        "age": 54,
+        "max_saving": 3964440.16077605,
+        "expenses": 17276255.9969773
+      },
+      {
+        "expected_savings": 3218787.67614091,
+        "min_saving": 2135208.3538108,
+        "age": 55,
+        "max_saving": 4302366.99847102,
+        "expenses": 17069692.0665787
+      },
+      {
+        "expected_savings": 3489627.28992256,
+        "min_saving": 2321655.20551576,
+        "age": 56,
+        "max_saving": 4657599.37432935,
+        "expenses": 16857269.2319724
+      },
+      {
+        "expected_savings": 3776301.14537813,
+        "min_saving": 2521626.28502991,
+        "age": 57,
+        "max_saving": 5030976.00572636,
+        "expenses": 16638890.9714673
+      },
+      {
+        "expected_savings": 4079689.50642886,
+        "min_saving": 2735998.11944352,
+        "age": 58,
+        "max_saving": 5423380.89341421,
+        "expenses": 16414459.4188289
+      },
+      {
+        "expected_savings": 4400721.14531793,
+        "min_saving": 2965696.02073055,
+        "age": 59,
+        "max_saving": 5835746.26990532,
+        "expenses": 16183875.3460406
+      },
+      {
+        "expected_savings": 4740376.01150626,
+        "min_saving": 3211696.46841583,
+        "age": 60,
+        "max_saving": 6269055.55459669,
+        "expenses": 15947038.1458546
+      },
+      {
+        "expected_savings": 5099688.0473669,
+        "min_saving": 3475029.72919405,
+        "age": 61,
+        "max_saving": 6724346.36553975,
+        "expenses": 15703845.8141303
+      },
+      {
+        "expected_savings": 5479748.15875215,
+        "min_saving": 3756782.6936191,
+        "age": 62,
+        "max_saving": 7202713.6238852,
+        "expenses": 15454194.931957
+      },
+      {
+        "expected_savings": 5881707.34895139,
+        "min_saving": 4058101.91955528,
+        "age": 63,
+        "max_saving": 7705312.7783475,
+        "expenses": 15197980.6475588
+      },
+      {
+        "expected_savings": 6306780.02502627,
+        "min_saving": 4278618.10661782,
+        "age": 64,
+        "max_saving": 8131784.39966961,
+        "expenses": 14935096.6579794
+      },
+      {
+        "expected_savings": 6756247.48600409,
+        "min_saving": 4724343.40533557,
+        "age": 65,
+        "max_saving": 8788151.56667262,
+        "expenses": 14665435.1905436
+      },
+      {
+        "expected_savings": 7231461.60293171,
+        "min_saving": 5091887.35524397,
+        "age": 66,
+        "max_saving": 9371035.85061945,
+        "expenses": 14388886.9840934
+      },
+      {
+        "expected_savings": 7733848.70134232,
+        "min_saving": 5484248.47391499,
+        "age": 67,
+        "max_saving": 9983448.92876965,
+        "expenses": 14105341.2699951
+      },
+      {
+        "expected_savings": 8264913.65726801,
+        "min_saving": 5902924.48899806,
+        "age": 68,
+        "max_saving": 10626902.825538,
+        "expenses": 13814685.7529164
+      },
+      {
+        "expected_savings": 8826244.21854312,
+        "min_saving": 6349495.43226999,
+        "age": 69,
+        "max_saving": 11302993.0048163,
+        "expenses": 13516806.5913691
+      },
+      {
+        "expected_savings": 9419515.56378963,
+        "min_saving": 6825628.20325651,
+        "age": 70,
+        "max_saving": 12013402.9243228,
+        "expenses": 13211588.3780156
+      },
+      {
+        "expected_savings": 10046495.112157,
+        "min_saving": 7333081.38618036,
+        "age": 71,
+        "max_saving": 12759908.8381336,
+        "expenses": 12898914.1197359
+      },
+      {
+        "expected_savings": 10709047.5976081,
+        "min_saving": 7873710.33315347,
+        "age": 72,
+        "max_saving": 13544384.8620627,
+        "expenses": 12578665.2174528
+      },
+      {
+        "expected_savings": 11409140.4223018,
+        "min_saving": 8449472.52752501,
+        "age": 73,
+        "max_saving": 14368808.3170787,
+        "expenses": 12250721.4457121
+      },
+      {
+        "expected_savings": 12148849.304422,
+        "min_saving": 9062433.24227068,
+        "age": 74,
+        "max_saving": 15235265.3665733,
+        "expenses": 11914960.9320148
+      },
+      {
+        "expected_savings": 12930364.2366477,
+        "min_saving": 9714771.50928009,
+        "age": 75,
+        "max_saving": 16145956.9640153,
+        "expenses": 11571260.135899
+      },
+      {
+        "expected_savings": 13755995.7723507,
+        "min_saving": 10408786.4163834,
+        "age": 76,
+        "max_saving": 17103205.128318,
+        "expenses": 11219493.8277676
+      },
+      {
+        "expected_savings": 14628181.6575441,
+        "min_saving": 11146903.7499674,
+        "age": 77,
+        "max_saving": 18109459.5651209,
+        "expenses": 10859535.0674601
+      },
+      {
+        "expected_savings": 15549493.8276004,
+        "min_saving": 11931683.0020758,
+        "age": 78,
+        "max_saving": 19167304.653125,
+        "expenses": 10491255.1825636
+      },
+      {
+        "expected_savings": 16522645.7887987,
+        "min_saving": 12765824.7619693,
+        "age": 79,
+        "max_saving": 20279466.8156281,
+        "expenses": 10114523.7464625
+      },
+      {
+        "expected_savings": 17550500.4058697,
+        "min_saving": 13652178.513258,
+        "age": 80,
+        "max_saving": 21448822.2984814,
+        "expenses": 9729208.55612106
+      },
+      {
+        "expected_savings": 18636078.1178664,
+        "min_saving": 14593750.8588986,
+        "age": 81,
+        "max_saving": 22678405.3768343,
+        "expenses": 9335175.60959815
+      },
+      {
+        "expected_savings": 19782565.6059198,
+        "min_saving": 15593714.1975973,
+        "age": 82,
+        "max_saving": 23971417.0142423,
+        "expenses": 8932289.08328918
+      },
+      {
+        "expected_savings": 20993324.9377317,
+        "min_saving": 16655415.8764634,
+        "age": 83,
+        "max_saving": 25331233.9990001,
+        "expenses": 8520411.30889307
+      },
+      {
+        "expected_savings": 22271903.2150282,
+        "min_saving": 17782387.8461351,
+        "age": 84,
+        "max_saving": 26761418.5839213,
+        "expenses": 8099402.7501007
+      },
+      {
+        "expected_savings": 23622042.7516332,
+        "min_saving": 18978356.8460479,
+        "age": 85,
+        "max_saving": 28265728.6572185,
+        "expenses": 7669121.97900161
+      },
+      {
+        "expected_savings": 25047691.8113493,
+        "min_saving": 20247255.1490394,
+        "age": 86,
+        "max_saving": 29848128.4736591,
+        "expenses": 7229425.65220551
+      },
+      {
+        "expected_savings": 26553015.9364335,
+        "min_saving": 21593231.8960961,
+        "age": 87,
+        "max_saving": 31512799.9767708,
+        "expenses": 6780168.4866756
+      },
+      {
+        "expected_savings": 28142409.8991519,
+        "min_saving": 23020665.053739,
+        "age": 88,
+        "max_saving": 33264154.7445648,
+        "expenses": 6321203.23526987
+      },
+      {
+        "expected_savings": 29820510.310682,
+        "min_saving": 24534174.0283354,
+        "age": 89,
+        "max_saving": 35106846.5930286,
+        "expenses": 5852380.66198735
+      },
+      {
+        "expected_savings": 31592208.923517,
+        "min_saving": 26138632.9735088,
+        "age": 90,
+        "max_saving": 37045784.8735253,
+        "expenses": 5373549.51691566
+      },
+      {
+        "expected_savings": 33462666.6655154,
+        "min_saving": 27839184.8288075,
+        "age": 91,
+        "max_saving": 39086148.5022234,
+        "expenses": 4884556.51087633
+      },
+      {
+        "expected_savings": 35437328.4458358,
+        "min_saving": 29641256.1298897,
+        "age": 92,
+        "max_saving": 41233400.761782,
+        "expenses": 4385246.28976453
+      },
+      {
+        "expected_savings": 37521938.775211,
+        "min_saving": 31550572.6326974,
+        "age": 93,
+        "max_saving": 43493304.9177246,
+        "expenses": 3875461.4085794
+      },
+      {
+        "expected_savings": 39722558.2453503,
+        "min_saving": 33573175.7964237,
+        "age": 94,
+        "max_saving": 45871940.694277,
+        "expenses": 3355042.3051416
+      },
+      {
+        "expected_savings": 42045580.9147224,
+        "min_saving": 35715440.1725423,
+        "age": 95,
+        "max_saving": 48375721.6569025,
+        "expenses": 2823827.27349418
+      },
+      {
+        "expected_savings": 44497752.6505687,
+        "min_saving": 37984091.7497666,
+        "age": 96,
+        "max_saving": 51011413.5513708,
+        "expenses": 2281652.4369833
+      },
+      {
+        "expected_savings": 47086190.4797419,
+        "min_saving": 40386227.307545,
+        "age": 97,
+        "max_saving": 53786153.6519387,
+        "expenses": 1728351.72101485
+      },
+      {
+        "expected_savings": 49818403.0038535,
+        "min_saving": 42929334.8335937,
+        "age": 98,
+        "max_saving": 56707471.1741133,
+        "expenses": 1163756.82548333
+      },
+      {
+        "expected_savings": 52702311.9372685,
+        "min_saving": 45621315.064015,
+        "age": 99,
+        "max_saving": 59783308.8105221,
+        "expenses": 587697.196869082
+      },
+      {
+        "expected_savings": 55746274.8297034,
+        "min_saving": 48470504.2077741,
+        "age": 100,
+        "max_saving": 63022045.4516328,
+        "expenses": 2.3283064365387e-10
+      }
+    ],
+    "min_pension_age": 72,
+    "expected_pension": 74,
+    "max_pension_age": 77,
+    "pension_payments": 27
+  }
