@@ -14,7 +14,6 @@ export default function DescriptionInput({ onChangeInput, input }) {
       { label: "Høj", value: 3 },
     ];
   };
-  const options = generateOptionsList();
   const SAVE_TEXT = "Gem";
   const UNDO_TEXT = "Fortryd";
   const PLACEHOLDER = "";
