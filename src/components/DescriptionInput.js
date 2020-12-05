@@ -34,7 +34,7 @@ export default function DescriptionInput({ onChangeInput, input }) {
             cancelButtonLabel={UNDO_TEXT}
             placeholder={PLACEHOLDER}
             onValidate={(value) => {
-              if (value < 0 || value > 80) {
+              if (value < 30 || value > 80) {
                 return false;
               }
               return true;
