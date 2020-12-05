@@ -4,8 +4,7 @@ import EasyEdit, { Types } from "react-easy-edit";
 
 export default function DescriptionInput({ onChangeInput, input }) {
   const save = (value, prop) => {
-    console.log("save", Number(value), prop);
-    onChangeInput(prop, Number(value));
+    onChangeInput(prop, Number(value.replace(".", "")));
   };
   const cancel = () => {};
   const generateOptionsList = () => {
