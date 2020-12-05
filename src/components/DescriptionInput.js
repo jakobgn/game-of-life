@@ -4,11 +4,13 @@ import EasyEdit, { Types } from "react-easy-edit";
 
 export default function DescriptionInput({ onChangeInput, input }) {
   const save = (value, prop, isNumber) => {
-    console.log("VAL", value.toString(), Math.round(value));
     if (isNumber) {
       onChangeInput(prop, value);
     } else {
-      onChangeInput(prop, Number(value.toString().replace(".", "")));
+      onChangeInput(
+        prop,
+        Number(value.toString().replace(".", "").replace(",", "."))
+      );
     }
   };
   const cancel = () => {};
@@ -32,8 +34,10 @@ export default function DescriptionInput({ onChangeInput, input }) {
           Jeg er{" "}
           <EasyEdit
             type={Types.TEXT}
-            onSave={(v) => save(v, "age")}
-            value={input.age}
+            onSave={(v) =>
+              save(Math.round(Number(v.replace(",", "."))), "age", true)
+            }
+            value={input.age.toString()}
             onCancel={cancel}
             saveButtonLabel={SAVE_TEXT}
             cancelButtonLabel={UNDO_TEXT}
@@ -118,8 +122,10 @@ export default function DescriptionInput({ onChangeInput, input }) {
           Jeg går på pension når jeg fylder{" "}
           <EasyEdit
             type={Types.TEXT}
-            onSave={(v) => save(v, "pension_age")}
-            value={input.pension_age}
+            onSave={(v) =>
+              save(Math.round(Number(v.replace(",", "."))), "pension_age", true)
+            }
+            value={input.pension_age.toString()}
             onCancel={cancel}
             saveButtonLabel={SAVE_TEXT}
             cancelButtonLabel={UNDO_TEXT}
