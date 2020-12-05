@@ -10,7 +10,7 @@ const colors = {
   grey: "#9E9E9E",
 };
 
-function Graph({ output }) {
+function Graph({ output, onChangeInput }) {
   console.log(output);
   const mainData = output.array_output.map((x) =>
     Math.min(x.expected, x.expenses)
@@ -132,6 +132,8 @@ function Graph({ output }) {
           //console.log(datasetIndex, index, value);
         },
         onDragEnd: function (e, datasetIndex, index, value) {
+          console.log("drag v", value);
+          onChangeInput("current_pension", value);
           e.target.style.cursor = "default";
           //console.log(datasetIndex, index, value);
         },
