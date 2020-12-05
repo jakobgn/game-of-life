@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import DescriptionInput from "./components/DescriptionInput";
 import Graph from "./components/Graph";
 function App() {
   const [error, setError] = useState(false);
   const [response, setResponse] = useState();
   const [input, setInput] = useState({
     age: 40,
-    salary_before_tax: 500000,
+    salary_before_tax: 40000,
     current_pension: 500000,
     pension_saving_rate: 16,
     payout_as_procentage_of_salary: 66,
@@ -19,6 +20,7 @@ function App() {
     setInput({ ...input, [prop]: value });
   };
   useEffect(() => {
+    console.log("FETCH", input);
     async function fetchData() {
       const res = await fetch("https://api.businesslogic.online/execute", {
         method: "POST",
@@ -40,11 +42,23 @@ function App() {
   }, [input]);
   return (
     <div className="App">
-      <div className="container">
-        {response && (
-          <Graph output={response} onChangeInput={onChangeInput}></Graph>
-        )}
-      </div>
+      {response && (
+        <div className="content">
+          <div className="graph-container">
+            <Graph output={response} onChangeInput={onChangeInput}></Graph>
+          </div>
+          <div className="help-text">
+            Tipas eksemplet til din konkrete situation ved at klikke og ændre på
+            de grønne tal fra neden.
+          </div>
+          <div className="description-container">
+            <DescriptionInput
+              input={input}
+              onChangeInput={onChangeInput}
+            ></DescriptionInput>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
