@@ -1,7 +1,7 @@
 import { Line } from "react-chartjs-2";
 import "chartjs-plugin-dragdata";
 import "chartjs-plugin-annotation";
-
+import { renderKr } from "../utils";
 const colors = {
   main: "#00912B",
   mainOff: "#52B46F",
@@ -63,7 +63,7 @@ function Graph({ output, onChangeInput }) {
               borderColor: colors.main,
               borderDash: [10, 10],
               label: {
-                content: "Forventet Pension",
+                content: "Forventet Pension: " + renderKr(max) + " kr.",
                 enabled: true,
                 position: "top",
               },
@@ -73,7 +73,18 @@ function Graph({ output, onChangeInput }) {
         legend: {
           display: false,
         },
-        tooltips: { enabled: true },
+        tooltips: {
+          enabled: true,
+          callbacks: {
+            title: function (tooltipItem, data) {
+              return data["labels"][tooltipItem[0]["index"]];
+            },
+            label: function (tooltipItem, data) {
+              const d = data["datasets"][0]["data"][tooltipItem["index"]];
+              return renderKr(d) + " kr.";
+            },
+          },
+        },
         scales: {
           xAxes: [
             {
@@ -103,6 +114,7 @@ function Graph({ output, onChangeInput }) {
             {
               gridLines: { display: false },
               ticks: {
+                display: false,
                 max: max * 1.1,
                 min: 0,
               },
@@ -139,9 +151,11 @@ function Graph({ output, onChangeInput }) {
         },
         hover: {
           onHover: function (e, element) {
-            // const point = this.getElementAtEvent(e);
-            // if (point.length) e.target.style.cursor = "grab";
-            // else e.target.style.cursor = "default";
+            const index = element[0]?._index;
+            if (index === 0) {
+              const point = this.getElementAtEvent(e);
+              if (point.length) e.target.style.cursor = "grab";
+            } else e.target.style.cursor = "default";
           },
         },
       }}
