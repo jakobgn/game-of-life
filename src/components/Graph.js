@@ -141,13 +141,11 @@ function Graph({ output, onChangeInput }) {
         },
         onDrag: function (e, datasetIndex, index, value) {
           e.target.style.cursor = "grabbing";
-          //console.log(datasetIndex, index, value);
         },
         onDragEnd: function (e, datasetIndex, index, value) {
           console.log("drag v", value);
           onChangeInput("current_pension", value);
           e.target.style.cursor = "default";
-          //console.log(datasetIndex, index, value);
         },
         hover: {
           onHover: function (e, element) {
