@@ -4,6 +4,7 @@ import DescriptionInput from "./components/DescriptionInput";
 import Graph from "./components/Graph";
 function App() {
   const [error, setError] = useState(false);
+  const [inputError, setInputError] = useState(false);
   const [response, setResponse] = useState();
   const [input, setInput] = useState({
     age: 40,
@@ -33,16 +34,36 @@ function App() {
       });
       res
         .json()
-        .then((res) =>
-          setResponse({ ...res, array_output: res.Array, Array: undefined })
-        )
-        .catch((err) => setError(err));
+        .then((res) => {
+          console.log("RES", res, res[0]?.error_strings);
+          if (res[0]?.error_strings || res.errors) {
+            setResponse(undefined);
+            if (res[0]?.error_strings) {
+              setError(res[0].error_strings[0]);
+              setInputError(res[0].error_strings[0]);
+            }
+            if (res.errors) {
+              if ((res.errors[0].code = 404)) {
+                setError("404 - Kunne ikke finde service");
+              } else {
+                setError("Der er en fejl i Business Logic Servicen");
+              }
+            }
+          } else {
+            console.log("set", res);
+            setResponse({ ...res, array_output: res.Array, Array: undefined });
+          }
+        })
+        .catch((err) => {
+          console.log("ERR", err);
+          setError(err);
+        });
     }
     fetchData(input);
   }, [input]);
   return (
     <div className="App">
-      {response && (
+      {response ? (
         <div className="content">
           <div className="graph-container">
             <Graph output={response} onChangeInput={onChangeInput}></Graph>
@@ -57,6 +78,26 @@ function App() {
               onChangeInput={onChangeInput}
             ></DescriptionInput>
           </div>
+        </div>
+      ) : (
+        <div className="content">
+          <div className="error-container">
+            <h4>Beklager! Der skette en fejl...</h4>
+            <div
+              className="error"
+              style={{ height: inputError ? "" : "700px" }}
+            >
+              {error}
+            </div>
+          </div>
+          {inputError && (
+            <div className="description-container">
+              <DescriptionInput
+                input={input}
+                onChangeInput={onChangeInput}
+              ></DescriptionInput>
+            </div>
+          )}
         </div>
       )}
     </div>

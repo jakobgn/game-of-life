@@ -3,8 +3,13 @@ import { renderKr } from "../utils";
 import EasyEdit, { Types } from "react-easy-edit";
 
 export default function DescriptionInput({ onChangeInput, input }) {
-  const save = (value, prop) => {
-    onChangeInput(prop, Number(value.replace(".", "")));
+  const save = (value, prop, isNumber) => {
+    console.log("VAL", value.toString(), Math.round(value));
+    if (isNumber) {
+      onChangeInput(prop, value);
+    } else {
+      onChangeInput(prop, Number(value.toString().replace(".", "")));
+    }
   };
   const cancel = () => {};
   const generateOptionsList = () => {
@@ -34,7 +39,7 @@ export default function DescriptionInput({ onChangeInput, input }) {
             cancelButtonLabel={UNDO_TEXT}
             placeholder={PLACEHOLDER}
             onValidate={(value) => {
-              if (value < 30 || value > 80) {
+              if (value < 0 || value > 80) {
                 return false;
               }
               return true;
@@ -79,7 +84,7 @@ export default function DescriptionInput({ onChangeInput, input }) {
           kr. i pension. Jeg er villig til at indbetale{" "}
           <EasyEdit
             type={Types.TEXT}
-            onSave={(v) => save(v, "pension_saving_rate")}
+            onSave={(v) => save(Number(v), "pension_saving_rate", true)}
             value={input.pension_saving_rate}
             onCancel={cancel}
             saveButtonLabel={SAVE_TEXT}
@@ -131,14 +136,18 @@ export default function DescriptionInput({ onChangeInput, input }) {
           år. Jeg vil have{" "}
           <EasyEdit
             type={Types.TEXT}
-            onSave={(v) =>
+            onSave={(v) => {
+              console.log("VV", v, Number(v.toString().replace(".", "")));
               save(
-                (input.salary_before_tax === 0
+                input.salary_before_tax === 0
                   ? 1
-                  : v / input.salary_before_tax) * 100,
-                "payout_as_procentage_of_salary"
-              )
-            }
+                  : (Number(v.toString().replace(".", "")) /
+                      input.salary_before_tax) *
+                      100,
+                "payout_as_procentage_of_salary",
+                true
+              );
+            }}
             value={renderKr(
               (input.payout_as_procentage_of_salary / 100) *
                 input.salary_before_tax
@@ -148,7 +157,13 @@ export default function DescriptionInput({ onChangeInput, input }) {
             cancelButtonLabel={UNDO_TEXT}
             placeholder={PLACEHOLDER}
             onValidate={(value) => {
-              if (value < 2 || value > input.salary_before_tax) {
+              const v = Number(value.toString().replace(".", ""));
+              const calc =
+                input.salary_before_tax === 0
+                  ? 1
+                  : (v / input.salary_before_tax) * 100;
+              console.log("com", v, input.salary_before_tax);
+              if (v < 2 || calc < 1 || v > input.salary_before_tax) {
                 return false;
               }
               return true;

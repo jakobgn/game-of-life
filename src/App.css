@@ -73,3 +73,12 @@ button.primary{
   cursor:pointer;
 
 }
+.error{
+  color:red;
+}
+.error-container{
+
+}
+h4{
+  margin-bottom:10px;
+}
