@@ -2,7 +2,7 @@ import React from "react";
 import { renderKr } from "../utils";
 import EasyEdit, { Types } from "react-easy-edit";
 
-export default function DescriptionInput({ onChangeInput, input }) {
+export default function DescriptionInput({ onChangeInput, input, output }) {
   const save = (value, prop, isNumber) => {
     if (isNumber) {
       onChangeInput(prop, value);
@@ -120,12 +120,16 @@ export default function DescriptionInput({ onChangeInput, input }) {
         <h2>På pension</h2>
         <div className="paragraph">
           Jeg går på pension når jeg fylder{" "}
-          <EasyEdit
+          <strong>
+            {output?.expected_pension.toString() ||
+              input.pension_age.toString()}
+          </strong>
+          {/* <EasyEdit
             type={Types.TEXT}
             onSave={(v) =>
               save(Math.round(Number(v.replace(",", "."))), "pension_age", true)
             }
-            value={input.pension_age.toString()}
+            value={output.expected_pension.toString()}
             onCancel={cancel}
             saveButtonLabel={SAVE_TEXT}
             cancelButtonLabel={UNDO_TEXT}
@@ -137,27 +141,15 @@ export default function DescriptionInput({ onChangeInput, input }) {
               return true;
             }}
             validationMessage={NOT_VALID_MESSAGE}
-          />
+          /> */}
           {"  "}
           år. Jeg vil have{" "}
           <EasyEdit
             type={Types.TEXT}
             onSave={(v) => {
-              console.log("VV", v, Number(v.toString().replace(".", "")));
-              save(
-                input.salary_before_tax === 0
-                  ? 1
-                  : (Number(v.toString().replace(".", "")) /
-                      input.salary_before_tax) *
-                      100,
-                "payout_as_procentage_of_salary",
-                true
-              );
+              save(v, "payout");
             }}
-            value={renderKr(
-              (input.payout_as_procentage_of_salary / 100) *
-                input.salary_before_tax
-            )}
+            value={renderKr(input.payout)}
             onCancel={cancel}
             saveButtonLabel={SAVE_TEXT}
             cancelButtonLabel={UNDO_TEXT}

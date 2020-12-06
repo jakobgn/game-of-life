@@ -5,13 +5,14 @@ import Graph from "./components/Graph";
 function App() {
   const [error, setError] = useState(false);
   const [inputError, setInputError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState();
   const [input, setInput] = useState({
     age: 40,
     salary_before_tax: 40000,
     current_pension: 500000,
     pension_saving_rate: 16,
-    payout_as_procentage_of_salary: 66,
+    payout: 26400,
     pension_investment_risk: 3,
     pension_age: 70,
   });
@@ -22,6 +23,14 @@ function App() {
   };
   useEffect(() => {
     console.log("FETCH", input);
+    const mapped = {
+      ...input,
+      salary_before_tax: input.salary_before_tax * 12,
+      payout_as_procentage_of_salary:
+        (input.payout / input.salary_before_tax) * 100,
+    };
+    console.log("FETCHm", mapped);
+    setLoading(true);
     async function fetchData() {
       const res = await fetch("https://api.businesslogic.online/execute", {
         method: "POST",
@@ -30,7 +39,7 @@ function App() {
           "Content-Type": "application/json",
           "X-Auth-Token": "6fec21760f7e46ceb999ec538304a43a",
         },
-        body: JSON.stringify(input),
+        body: JSON.stringify(mapped),
       });
       res
         .json()
@@ -50,14 +59,21 @@ function App() {
               }
             }
           } else {
-            console.log("set", res);
-            setResponse({ ...res, array_output: res.Array, Array: undefined });
+            const output = {
+              ...res,
+              array_output: res.Array,
+
+              Array: undefined,
+            };
+            console.log("set", output);
+            setResponse(output);
           }
         })
         .catch((err) => {
           console.log("ERR", err);
           setError(err);
-        });
+        })
+        .finally(() => setLoading(false));
     }
     fetchData(input);
   }, [input]);
@@ -76,9 +92,12 @@ function App() {
             <DescriptionInput
               input={input}
               onChangeInput={onChangeInput}
+              output={response}
             ></DescriptionInput>
           </div>
         </div>
+      ) : loading ? (
+        <div />
       ) : (
         <div className="content">
           <div className="error-container">
@@ -95,6 +114,7 @@ function App() {
               <DescriptionInput
                 input={input}
                 onChangeInput={onChangeInput}
+                output={response}
               ></DescriptionInput>
             </div>
           )}
