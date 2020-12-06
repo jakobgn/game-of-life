@@ -5,7 +5,7 @@ import Graph from "./components/Graph";
 function App() {
   const [error, setError] = useState(false);
   const [inputError, setInputError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [response, setResponse] = useState();
   const [input, setInput] = useState({
     age: 40,
@@ -22,15 +22,18 @@ function App() {
     setInput({ ...input, [prop]: value });
   };
   useEffect(() => {
+    setLoading(true);
     console.log("FETCH", input);
     const mapped = {
       ...input,
       salary_before_tax: input.salary_before_tax * 12,
       payout_as_procentage_of_salary:
-        (input.payout / input.salary_before_tax) * 100,
+        input.salary_before_tax === 0
+          ? 1
+          : (input.payout / input.salary_before_tax) * 100,
     };
     console.log("FETCHm", mapped);
-    setLoading(true);
+
     async function fetchData() {
       const res = await fetch("https://api.businesslogic.online/execute", {
         method: "POST",
